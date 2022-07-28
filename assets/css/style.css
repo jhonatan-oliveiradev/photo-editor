@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,800,900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.dark-mode {
+	filter: invert(1) hue-rotate(180deg);
+}
+
+.invert {
+	filter: invert(1) hue-rotate(180deg);
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(to right, #636573, #323240);
+	color: #bfa7f2;
+}
+
+.container {
+	width: 850px;
+	background: #323240;
+	border-radius: 12px;
+	padding: 30px 35px 35px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.container.disable :where(.editor-panel, .reset-filter, .save-img) {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.container h2 {
+	font-size: 22px;
+	font-weight: 500;
+}
+
+.container .wrapper {
+	display: flex;
+	margin: 20px 0;
+	min-height: 335px;
+}
+
+.wrapper .editor-panel {
+	width: 280px;
+	padding: 15px 20px;
+	border-radius: 5px;
+	border: 1px solid #dcf235;
+}
+
+.editor-panel .title {
+	display: block;
+	font-size: 16px;
+	margin-bottom: 12px;
+}
+
+.editor-panel .options,
+.controls {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.editor-panel button {
+	height: 40px;
+	font-size: 14px;
+	color: #323240;
+	background: #dcf235;
+	margin-bottom: 5px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.editor-panel button:hover {
+	background: #67733d;
+	color: #bfa7f2;
+}
+
+.editor-panel .filter button {
+	width: calc(100% / 2 - 4px);
+}
+
+.filter button.active {
+	background: #bfa7f2;
+	color: #dcf235;
+}
+
+.filter .slider {
+	margin-top: 12px;
+}
+
+.filter .slider .filter-info {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+}
+
+.filter .slider input {
+	width: 100%;
+	height: 5px;
+	accent-color: #dcf235;
+}
+
+.editor-panel .rotate {
+	margin-top: 17px;
+}
+
+.editor-panel .rotate button {
+	width: calc(100% / 4 - 3px);
+}
+
+.rotate button:nth-child(3),
+.rotate button:nth-child(4) {
+	font-size: 18px;
+}
+
+.wrapper .preview-img {
+	flex-grow: 1;
+	display: flex;
+	overflow: hidden;
+	margin-left: 20px;
+	border-radius: 5px;
+	align-items: center;
+	justify-content: center;
+}
+
+.preview-img img {
+	max-width: 490px;
+	max-height: 335px;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.controls button {
+	font-size: 14px;
+	padding: 11px 20px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	color: #323240;
+	background: #dcf235;
+	transition: all 0.3s ease-in-out;
+}
+
+.controls button:hover {
+	background: #67733d;
+	color: #bfa7f2;
+}
+
+.controls .reset-filter {
+	width: 280px;
+}
+
+.controls .choose-img,
+.controls .save-img {
+	width: 229px;
+}
+
+.controls .save-img {
+	margin-right: 10px;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+	.container {
+		padding: 25px;
+	}
+
+	.container .wrapper {
+		flex-wrap: wrap-reverse;
+	}
+
+	.wrapper .editor-panel {
+		width: 100%;
+	}
+
+	.wrapper .preview-img {
+		width: 100%;
+		margin: 0 0 15px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.controls button {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.controls .row {
+		width: 100%;
+	}
+
+	.controls .row .save-img {
+		margin-right: 0;
+	}
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background: #323240;
+	color: #bfa7f2;
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+	box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.4);
+}
+
+footer p a {
+	color: #bfa7f2;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+}
+
+footer p a:hover {
+	color: #dcf235;
+}
